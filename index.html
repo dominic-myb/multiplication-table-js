@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Multiplication Table</h2>
+    <input type="text" name="mul" id="mul-input">
+    <input type="button" name="submit" id="submit-btn" value="Submit" onclick="showTable()">
+    <ul id="result"></ul>
+    <script>
+        function showTable(){
+            
+            var num = document.getElementById("mul-input").value;
+            let text = "";
+            var numCheck = /^[0-9]+$/;
+
+            if(numCheck.test(num)){
+
+                for(let x = 1; x <= 10; x++){
+                    text += "<li>" + num + " x " + x + " = " + (((num*100)*x)/100) + "</li>"; 
+                }
+
+                document.getElementById("result").innerHTML = text;
+            }   
+        }
+    </script>
+</body>
+</html>
